@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CalculoDeSubstituicaoTributariaNovaApuracao
+{
+    public partial class frmPrincipal : Form
+    {
+        double totalPresumido = 0;
+
+        public frmPrincipal()
+        {
+            InitializeComponent();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            PreencherGridValorPresumido();
+            txtQuantidade.Focus();
+        }
+
+        public void PreencherGridValorPresumido()
+        {
+            try
+            {
+                DataGridViewRow item = new DataGridViewRow();
+
+                //int totalLinhas = dgvEntradas.RowCount;
+                item.CreateCells(dgvEntradas);
+
+                item.Cells[0].Value =  txtQuantidade.Text;
+                item.Cells[1].Value = txtBCSTUnit.Text;
+                item.Cells[2].Value = txtAliquotaST.Text;
+                item.Cells[3].Value = txtICMSSTPresumido.Text;
+                totalPresumido = Convert.ToDouble(txtICMSSTPresumido.Text) + totalPresumido;
+
+                dgvEntradas.Rows.Add(item);
+
+                txtValorTotalSTPresumido.Text = totalPresumido.ToString();                
+
+                LimparEntradaPresumida();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void txtAliquotaST_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAliquotaST.Text == "")
+                txtAliquotaST.Text = "0";
+            else
+                txtICMSSTPresumido.Text = ((Convert.ToDouble(txtQuantidade.Text) * Convert.ToDouble(txtBCSTUnit.Text)) * (Convert.ToDouble(txtAliquotaST.Text))/100).ToString();
+        }
+
+        public void LimparEntradaPresumida()
+        {
+            txtQuantidade.Text = "0";
+            txtBCSTUnit.Text = "0";
+            txtAliquotaST.Text = "0";
+            txtICMSSTPresumido.Text = "0";
+        }
+
+        private void txtICMSSTPresumido_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void txtAliquotaST_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+                PreencherGridValorPresumido();
+        }
+    }
+}
