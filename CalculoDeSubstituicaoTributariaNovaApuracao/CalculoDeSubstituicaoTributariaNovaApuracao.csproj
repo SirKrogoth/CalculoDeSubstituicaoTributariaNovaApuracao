@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Apresentação\frmParcelaST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentação\frmParcelaST.Designer.cs">
+      <DependentUpon>frmParcelaST.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentação\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +59,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Apresentação\frmParcelaST.resx">
+      <DependentUpon>frmParcelaST.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apresentação\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>

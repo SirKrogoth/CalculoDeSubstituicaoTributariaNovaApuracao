@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.gbCompras = new System.Windows.Forms.GroupBox();
             this.btn = new System.Windows.Forms.Button();
@@ -78,12 +78,14 @@
             // 
             // btn
             // 
+            this.btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn.Location = new System.Drawing.Point(559, 44);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(75, 23);
             this.btn.TabIndex = 1;
             this.btn.Text = "Estoque";
             this.btn.UseVisualStyleBackColor = true;
+            this.btn.Click += new System.EventHandler(this.btn_Click);
             // 
             // txtValorPresumido
             // 
@@ -111,8 +113,8 @@
             // 
             this.dgvCompras.AllowUserToAddRows = false;
             this.dgvCompras.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvCompras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvCompras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colQuantidade,
@@ -181,6 +183,7 @@
             this.txtICMSPresumido.Size = new System.Drawing.Size(100, 20);
             this.txtICMSPresumido.TabIndex = 4;
             this.txtICMSPresumido.Text = "0";
+            this.txtICMSPresumido.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtICMSPresumido_MouseClick);
             this.txtICMSPresumido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtICMSPresumido_KeyDown);
             // 
             // txtAliquotaICMSST
@@ -190,6 +193,7 @@
             this.txtAliquotaICMSST.Size = new System.Drawing.Size(100, 20);
             this.txtAliquotaICMSST.TabIndex = 3;
             this.txtAliquotaICMSST.Text = "0";
+            this.txtAliquotaICMSST.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtAliquotaICMSST_MouseClick);
             this.txtAliquotaICMSST.TextChanged += new System.EventHandler(this.txtAliquotaICMSST_TextChanged);
             this.txtAliquotaICMSST.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAliquotaICMSST_KeyDown);
             // 
@@ -209,6 +213,7 @@
             this.txtBCSTUnit.Size = new System.Drawing.Size(100, 20);
             this.txtBCSTUnit.TabIndex = 2;
             this.txtBCSTUnit.Text = "0";
+            this.txtBCSTUnit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBCSTUnit_MouseClick);
             this.txtBCSTUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBCSTUnit_KeyDown);
             // 
             // label2
@@ -227,6 +232,7 @@
             this.txtQuantidade.Size = new System.Drawing.Size(75, 20);
             this.txtQuantidade.TabIndex = 1;
             this.txtQuantidade.Text = "0";
+            this.txtQuantidade.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtQuantidade_MouseClick);
             this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged);
             this.txtQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantidade_KeyDown);
             this.txtQuantidade.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtQuantidade_MouseDown);

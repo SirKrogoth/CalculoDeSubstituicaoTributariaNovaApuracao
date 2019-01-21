@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculoDeSubstituicaoTributariaNovaApuracao.Apresentação;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,6 +51,7 @@ namespace CalculoDeSubstituicaoTributariaNovaApuracao
             dgvCompras.Rows.Add(item);
 
             txtQuantidade.Focus();
+            txtQuantidade.SelectAll();
         }
 
         private void txtAliquotaICMSST_TextChanged(object sender, EventArgs e)
@@ -115,6 +117,35 @@ namespace CalculoDeSubstituicaoTributariaNovaApuracao
                 AdicionarColunaGridST();
         }
 
-        
+        private void txtQuantidade_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Clicks == 1)
+                txtQuantidade.SelectAll();
+        }
+
+        private void txtBCSTUnit_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Clicks == 1)
+                txtBCSTUnit.SelectAll();
+        }
+
+        private void txtAliquotaICMSST_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Clicks == 1)
+                txtAliquotaICMSST.SelectAll();
+        }
+
+        private void txtICMSPresumido_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Clicks == 1)
+                txtICMSPresumido.SelectAll();
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            frmParcelaST frmParcela = new frmParcelaST();
+
+            frmParcela.ShowDialog();
+        }
     }
 }
