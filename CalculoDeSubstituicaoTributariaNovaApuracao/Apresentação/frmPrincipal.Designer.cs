@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbCompras = new System.Windows.Forms.GroupBox();
             this.btn = new System.Windows.Forms.Button();
             this.txtValorPresumido = new System.Windows.Forms.TextBox();
@@ -49,9 +50,28 @@
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pcbLogotipo = new System.Windows.Forms.PictureBox();
+            this.gbVendas = new System.Windows.Forms.GroupBox();
+            this.txtValorEfetivo = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dgvVendas = new System.Windows.Forms.DataGridView();
+            this.btnAdicionarVendas = new System.Windows.Forms.Button();
+            this.txtICMSEfetivoVenda = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtAliquotaICMSSTVenda = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtBCSTUnitVenda = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtQuantidadeVenda = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.colQuantidadeVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBCSTUnitVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAliquotaICMSSTVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colICMSEfetivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCompras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogotipo)).BeginInit();
+            this.gbVendas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.SuspendLayout();
             // 
             // gbCompras
@@ -113,8 +133,8 @@
             // 
             this.dgvCompras.AllowUserToAddRows = false;
             this.dgvCompras.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvCompras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvCompras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colQuantidade,
@@ -249,20 +269,199 @@
             // pcbLogotipo
             // 
             this.pcbLogotipo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogotipo.Image")));
-            this.pcbLogotipo.Location = new System.Drawing.Point(688, 540);
+            this.pcbLogotipo.Location = new System.Drawing.Point(688, 560);
             this.pcbLogotipo.Name = "pcbLogotipo";
             this.pcbLogotipo.Size = new System.Drawing.Size(100, 50);
             this.pcbLogotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbLogotipo.TabIndex = 1;
             this.pcbLogotipo.TabStop = false;
             // 
+            // gbVendas
+            // 
+            this.gbVendas.Controls.Add(this.txtValorEfetivo);
+            this.gbVendas.Controls.Add(this.label10);
+            this.gbVendas.Controls.Add(this.dgvVendas);
+            this.gbVendas.Controls.Add(this.btnAdicionarVendas);
+            this.gbVendas.Controls.Add(this.txtICMSEfetivoVenda);
+            this.gbVendas.Controls.Add(this.label9);
+            this.gbVendas.Controls.Add(this.txtAliquotaICMSSTVenda);
+            this.gbVendas.Controls.Add(this.label8);
+            this.gbVendas.Controls.Add(this.txtBCSTUnitVenda);
+            this.gbVendas.Controls.Add(this.label7);
+            this.gbVendas.Controls.Add(this.txtQuantidadeVenda);
+            this.gbVendas.Controls.Add(this.label6);
+            this.gbVendas.Location = new System.Drawing.Point(13, 274);
+            this.gbVendas.Name = "gbVendas";
+            this.gbVendas.Size = new System.Drawing.Size(775, 260);
+            this.gbVendas.TabIndex = 2;
+            this.gbVendas.TabStop = false;
+            this.gbVendas.Text = "Vendas";
+            // 
+            // txtValorEfetivo
+            // 
+            this.txtValorEfetivo.Enabled = false;
+            this.txtValorEfetivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorEfetivo.Location = new System.Drawing.Point(512, 229);
+            this.txtValorEfetivo.Name = "txtValorEfetivo";
+            this.txtValorEfetivo.Size = new System.Drawing.Size(122, 22);
+            this.txtValorEfetivo.TabIndex = 12;
+            this.txtValorEfetivo.Text = "0,00";
+            this.txtValorEfetivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(405, 230);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(101, 16);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Valor Efetivo:";
+            // 
+            // dgvVendas
+            // 
+            this.dgvVendas.AllowUserToAddRows = false;
+            this.dgvVendas.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvVendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            this.dgvVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colQuantidadeVendas,
+            this.colBCSTUnitVendas,
+            this.colAliquotaICMSSTVendas,
+            this.colICMSEfetivo});
+            this.dgvVendas.Location = new System.Drawing.Point(38, 75);
+            this.dgvVendas.Name = "dgvVendas";
+            this.dgvVendas.ReadOnly = true;
+            this.dgvVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVendas.Size = new System.Drawing.Size(596, 142);
+            this.dgvVendas.TabIndex = 9;
+            // 
+            // btnAdicionarVendas
+            // 
+            this.btnAdicionarVendas.Location = new System.Drawing.Point(478, 46);
+            this.btnAdicionarVendas.Name = "btnAdicionarVendas";
+            this.btnAdicionarVendas.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionarVendas.TabIndex = 8;
+            this.btnAdicionarVendas.Text = "Adicionar";
+            this.btnAdicionarVendas.UseVisualStyleBackColor = true;
+            this.btnAdicionarVendas.Click += new System.EventHandler(this.btnAdicionarVendas_Click);
+            // 
+            // txtICMSEfetivoVenda
+            // 
+            this.txtICMSEfetivoVenda.Location = new System.Drawing.Point(348, 48);
+            this.txtICMSEfetivoVenda.Name = "txtICMSEfetivoVenda";
+            this.txtICMSEfetivoVenda.Size = new System.Drawing.Size(94, 20);
+            this.txtICMSEfetivoVenda.TabIndex = 7;
+            this.txtICMSEfetivoVenda.Text = "0";
+            this.txtICMSEfetivoVenda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtICMSEfetivoVenda_MouseClick);
+            this.txtICMSEfetivoVenda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtICMSEfetivoVenda_KeyDown);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(345, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "ICMS Efetivo";
+            // 
+            // txtAliquotaICMSSTVenda
+            // 
+            this.txtAliquotaICMSSTVenda.Location = new System.Drawing.Point(238, 48);
+            this.txtAliquotaICMSSTVenda.Name = "txtAliquotaICMSSTVenda";
+            this.txtAliquotaICMSSTVenda.Size = new System.Drawing.Size(97, 20);
+            this.txtAliquotaICMSSTVenda.TabIndex = 5;
+            this.txtAliquotaICMSSTVenda.Text = "0";
+            this.txtAliquotaICMSSTVenda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtAliquotaICMSSTVenda_MouseClick);
+            this.txtAliquotaICMSSTVenda.TextChanged += new System.EventHandler(this.txtAliquotaICMSSTVenda_TextChanged);
+            this.txtAliquotaICMSSTVenda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAliquotaICMSSTVenda_KeyDown);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(235, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Alíquota ICMS ST";
+            // 
+            // txtBCSTUnitVenda
+            // 
+            this.txtBCSTUnitVenda.Location = new System.Drawing.Point(132, 48);
+            this.txtBCSTUnitVenda.Name = "txtBCSTUnitVenda";
+            this.txtBCSTUnitVenda.Size = new System.Drawing.Size(97, 20);
+            this.txtBCSTUnitVenda.TabIndex = 3;
+            this.txtBCSTUnitVenda.Text = "0";
+            this.txtBCSTUnitVenda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBCSTUnitVenda_MouseClick);
+            this.txtBCSTUnitVenda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBCSTUnitVenda_KeyDown);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(129, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "BC ST Unit.";
+            // 
+            // txtQuantidadeVenda
+            // 
+            this.txtQuantidadeVenda.Location = new System.Drawing.Point(38, 48);
+            this.txtQuantidadeVenda.Name = "txtQuantidadeVenda";
+            this.txtQuantidadeVenda.Size = new System.Drawing.Size(72, 20);
+            this.txtQuantidadeVenda.TabIndex = 1;
+            this.txtQuantidadeVenda.Text = "0";
+            this.txtQuantidadeVenda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtQuantidadeVenda_MouseClick);
+            this.txtQuantidadeVenda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantidadeVenda_KeyDown);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Quantidade";
+            // 
+            // colQuantidadeVendas
+            // 
+            this.colQuantidadeVendas.HeaderText = "Quantidade";
+            this.colQuantidadeVendas.Name = "colQuantidadeVendas";
+            this.colQuantidadeVendas.ReadOnly = true;
+            // 
+            // colBCSTUnitVendas
+            // 
+            this.colBCSTUnitVendas.HeaderText = "BC ST Unit.";
+            this.colBCSTUnitVendas.Name = "colBCSTUnitVendas";
+            this.colBCSTUnitVendas.ReadOnly = true;
+            this.colBCSTUnitVendas.Width = 150;
+            // 
+            // colAliquotaICMSSTVendas
+            // 
+            this.colAliquotaICMSSTVendas.HeaderText = "Alíquota ICMS ST";
+            this.colAliquotaICMSSTVendas.Name = "colAliquotaICMSSTVendas";
+            this.colAliquotaICMSSTVendas.ReadOnly = true;
+            this.colAliquotaICMSSTVendas.Width = 150;
+            // 
+            // colICMSEfetivo
+            // 
+            this.colICMSEfetivo.HeaderText = "ICMS Efetivo";
+            this.colICMSEfetivo.Name = "colICMSEfetivo";
+            this.colICMSEfetivo.ReadOnly = true;
+            this.colICMSEfetivo.Width = 150;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 602);
+            this.ClientSize = new System.Drawing.Size(800, 622);
+            this.Controls.Add(this.gbVendas);
             this.Controls.Add(this.pcbLogotipo);
             this.Controls.Add(this.gbCompras);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmPrincipal";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -272,6 +471,9 @@
             this.gbCompras.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogotipo)).EndInit();
+            this.gbVendas.ResumeLayout(false);
+            this.gbVendas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,6 +499,23 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn;
         private System.Windows.Forms.PictureBox pcbLogotipo;
+        private System.Windows.Forms.GroupBox gbVendas;
+        private System.Windows.Forms.TextBox txtValorEfetivo;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dgvVendas;
+        private System.Windows.Forms.Button btnAdicionarVendas;
+        private System.Windows.Forms.TextBox txtICMSEfetivoVenda;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtAliquotaICMSSTVenda;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtBCSTUnitVenda;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtQuantidadeVenda;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantidadeVendas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBCSTUnitVendas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAliquotaICMSSTVendas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colICMSEfetivo;
     }
 }
 
