@@ -15,6 +15,7 @@ namespace CalculoDeSubstituicaoTributariaNovaApuracao
     {
         public double valorPresumidoTotal = 0;
         public double valorEfetivoTotal = 0;
+        public static double valorEstoque = 0;
 
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace CalculoDeSubstituicaoTributariaNovaApuracao
             item.Cells[2].Value = txtAliquotaICMSST.Text;
             item.Cells[3].Value = txtICMSPresumido.Text;
 
-            valorPresumidoTotal = valorPresumidoTotal + Convert.ToDouble(txtICMSPresumido.Text);
+            valorPresumidoTotal = valorPresumidoTotal + Convert.ToDouble(txtICMSPresumido.Text) + valorEstoque;
 
             txtValorPresumido.Text = valorPresumidoTotal.ToString();
 

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbCompras = new System.Windows.Forms.GroupBox();
             this.btn = new System.Windows.Forms.Button();
             this.txtValorPresumido = new System.Windows.Forms.TextBox();
@@ -54,6 +54,10 @@
             this.txtValorEfetivo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
+            this.colQuantidadeVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBCSTUnitVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAliquotaICMSSTVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colICMSEfetivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdicionarVendas = new System.Windows.Forms.Button();
             this.txtICMSEfetivoVenda = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -63,10 +67,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtQuantidadeVenda = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.colQuantidadeVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBCSTUnitVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAliquotaICMSSTVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colICMSEfetivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbCompras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogotipo)).BeginInit();
@@ -133,8 +133,8 @@
             // 
             this.dgvCompras.AllowUserToAddRows = false;
             this.dgvCompras.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvCompras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvCompras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colQuantidade,
@@ -323,8 +323,8 @@
             // 
             this.dgvVendas.AllowUserToAddRows = false;
             this.dgvVendas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvVendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvVendas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colQuantidadeVendas,
@@ -338,9 +338,36 @@
             this.dgvVendas.Size = new System.Drawing.Size(596, 142);
             this.dgvVendas.TabIndex = 9;
             // 
+            // colQuantidadeVendas
+            // 
+            this.colQuantidadeVendas.HeaderText = "Quantidade";
+            this.colQuantidadeVendas.Name = "colQuantidadeVendas";
+            this.colQuantidadeVendas.ReadOnly = true;
+            // 
+            // colBCSTUnitVendas
+            // 
+            this.colBCSTUnitVendas.HeaderText = "BC ST Unit.";
+            this.colBCSTUnitVendas.Name = "colBCSTUnitVendas";
+            this.colBCSTUnitVendas.ReadOnly = true;
+            this.colBCSTUnitVendas.Width = 150;
+            // 
+            // colAliquotaICMSSTVendas
+            // 
+            this.colAliquotaICMSSTVendas.HeaderText = "Alíquota ICMS ST";
+            this.colAliquotaICMSSTVendas.Name = "colAliquotaICMSSTVendas";
+            this.colAliquotaICMSSTVendas.ReadOnly = true;
+            this.colAliquotaICMSSTVendas.Width = 150;
+            // 
+            // colICMSEfetivo
+            // 
+            this.colICMSEfetivo.HeaderText = "ICMS Efetivo";
+            this.colICMSEfetivo.Name = "colICMSEfetivo";
+            this.colICMSEfetivo.ReadOnly = true;
+            this.colICMSEfetivo.Width = 150;
+            // 
             // btnAdicionarVendas
             // 
-            this.btnAdicionarVendas.Location = new System.Drawing.Point(478, 46);
+            this.btnAdicionarVendas.Location = new System.Drawing.Point(478, 45);
             this.btnAdicionarVendas.Name = "btnAdicionarVendas";
             this.btnAdicionarVendas.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionarVendas.TabIndex = 8;
@@ -424,33 +451,6 @@
             this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Quantidade";
-            // 
-            // colQuantidadeVendas
-            // 
-            this.colQuantidadeVendas.HeaderText = "Quantidade";
-            this.colQuantidadeVendas.Name = "colQuantidadeVendas";
-            this.colQuantidadeVendas.ReadOnly = true;
-            // 
-            // colBCSTUnitVendas
-            // 
-            this.colBCSTUnitVendas.HeaderText = "BC ST Unit.";
-            this.colBCSTUnitVendas.Name = "colBCSTUnitVendas";
-            this.colBCSTUnitVendas.ReadOnly = true;
-            this.colBCSTUnitVendas.Width = 150;
-            // 
-            // colAliquotaICMSSTVendas
-            // 
-            this.colAliquotaICMSSTVendas.HeaderText = "Alíquota ICMS ST";
-            this.colAliquotaICMSSTVendas.Name = "colAliquotaICMSSTVendas";
-            this.colAliquotaICMSSTVendas.ReadOnly = true;
-            this.colAliquotaICMSSTVendas.Width = 150;
-            // 
-            // colICMSEfetivo
-            // 
-            this.colICMSEfetivo.HeaderText = "ICMS Efetivo";
-            this.colICMSEfetivo.Name = "colICMSEfetivo";
-            this.colICMSEfetivo.ReadOnly = true;
-            this.colICMSEfetivo.Width = 150;
             // 
             // frmPrincipal
             // 

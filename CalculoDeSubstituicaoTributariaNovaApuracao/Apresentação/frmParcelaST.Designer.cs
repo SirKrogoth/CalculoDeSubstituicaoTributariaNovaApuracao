@@ -52,6 +52,8 @@
             this.txtValorTotalProdutosST.Name = "txtValorTotalProdutosST";
             this.txtValorTotalProdutosST.Size = new System.Drawing.Size(327, 62);
             this.txtValorTotalProdutosST.TabIndex = 1;
+            this.txtValorTotalProdutosST.Text = "0";
+            this.txtValorTotalProdutosST.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorTotalProdutosST_KeyDown);
             // 
             // label2
             // 
@@ -74,6 +76,7 @@
             // 
             // tbnSalvar
             // 
+            this.tbnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tbnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbnSalvar.Location = new System.Drawing.Point(139, 220);
             this.tbnSalvar.Name = "tbnSalvar";
